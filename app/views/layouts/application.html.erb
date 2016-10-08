@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RedditOnRails</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Work+Sans|Rubik" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<% if current_user %>
+  <%= button_to "Sign Out", session_url, method: :delete %>
+  <!-- <%= link_to "Sign out!", session_url, method: :delete %> -->
+<% end %>
+<%= yield %>
+
+</body>
+</html>
